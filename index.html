@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            text-align: center;
+        }
+
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .min input,.max input{
+            width: 50px;
+            font-size: 20px;
+            color: #123135;
+            box-shadow: #123135 1px 3px 4px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        .input{
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        h1{
+            font-size: 40px;
+            color: #123135;
+        }
+
+        button{
+            margin-top: 15px;
+            color: #fff;
+            background-color: #123135;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        button:hover{
+            color: #123135;
+            background-color: #fff;
+            border: 1px solid #123135;
+        }
+    </style>
+    <title>Random</title>
+</head>
+<body>
+    <h1>Random Form</h1>
+
+        <form action="#">
+            <h1 id="data">1</h1>
+            <div class="input">
+                <div class="min">
+                    <input type="number" id="min" value="1">
+                </div>
+                <div class="max">
+                    <input type="number" id="max" value="10">
+                </div>
+            </div>
+        </form>
+
+        <button id="btn">Create</button>
+        
+
+    <script>
+        let min = document.getElementById("min").value;
+        let max = document.getElementById("max").value;
+        let id = document.getElementById("data")
+        let btn = document.getElementById("btn")
+
+        btn.addEventListener("click", () => {
+            let randomNum = Math.floor(Math.random() * (max - min) + min)
+            id.textContent = randomNum
+        })
+
+        
+        
+        
+    </script>
+</body>
+</html>
